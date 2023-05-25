@@ -2,13 +2,15 @@
 <html>
     <head>
         <meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		
 <style>
 
-a:visited {text-decoration: none; color: #9bb1a9;}
+a:visited {text-decoration: none; color: black;}
 a:hover { text-decoration: none; color: black;} 
-a:link {text-decoration: none; color: #9bb1a9;}
+a:link {text-decoration: none; color: black;}
 		
  
 * {
@@ -16,7 +18,9 @@ a:link {text-decoration: none; color: #9bb1a9;}
  box-sizing: border-box;
  background-color: #cedad5;
             }
-
+			#main {
+            transition: margin-left 0.4s;
+            padding: 16px;}
             .h2 {
               margin-bottom: -10px;
               padding-top: 20px;
@@ -58,7 +62,55 @@ a:link {text-decoration: none; color: #9bb1a9;}
         font-size: 25px;
         border-radius: 30px;
 		}
+		.sidebar {
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #9bb1a9;
+            overflow-x: hidden;
+            transition: 0.3s;/*펼침속도*/
+            padding-top: 60px;
+            }
 
+            .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+            display: block;
+			background-color: #9bb1a9;
+            transition: 0.3s;
+            }
+
+            /*메뉴열기 hover 시*/
+            .sidebar a:hover {
+            color: #cedad5;
+            }
+
+            .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            }
+
+			.openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #cedad5;
+			border: none;
+		}
+		#main {
+            transition: margin-left 0.4s;
+            padding: 16px;
+            }
+			.openbtn:hover {
+            background-color: #9bb1a9;
+            }
       footer {
         margin-top: 120px;
         height: 80px;
@@ -89,12 +141,39 @@ a:link {text-decoration: none; color: #9bb1a9;}
     {document.getElementById("iimage").src = image;}
 	function func() {
 		let name = prompt("이름을 입력해봐~!");
-		document.getElementById('hi').innerHTML = name + " 안뇽 ㅎㅎ 반가웡~"
-	}
-</script>
+		document.getElementById('hi').innerHTML = name + " 안뇽 ㅎㅎ 반가웡~"}
+	function openMenu() {
+                document.getElementById("main").style.marginLeft = "250px";
+                document.querySelector('.sidebar').style.width = "250px";
+                document.querySelector('.openbtn').style.display = 'none';
+            }
+
+            function closeMenu() { 
+                document.getElementById("main").style.marginLeft= "0";
+                document.querySelector('.sidebar').style.width = "0";
+                document.querySelector('.openbtn').style.display = 'block';
+            }
+	const btn = document.querySelector(".btn");
+	const input = document.querySelector(".input");
+	const menu = document.getElementsByClassName('menu')[0]
+
 </script>
               
 <title>아02의웹프실습정리노트</title>
+
+<div class="sidebar">
+	<a class="closebtn" onclick="closeMenu()">×</a>
+	<a href="login.html">[회원가입]</a>&nbsp;
+	<a href="루바토 펜션 안내.html">[루바토 펜션 안내]</a>&nbsp;
+	<a href="행사안내화면.html">[행사 안내]</a>&nbsp;
+	<a href="호서야간개장.html">[호서 야간 개장]</a>&nbsp;
+	<a href="세일 안내장.html">[세일 안내장]</a>&nbsp;
+	<a href="월간 일정표.html">[월간 일정표]</a>&nbsp;
+	<a href="판매목록화면.html">[관심상품 판매목록]</a>
+</div>
+<div id="main">
+	<button class="openbtn" onclick="openMenu()">
+	☰</button></div>
 
     </head>
     <body>
@@ -102,13 +181,8 @@ a:link {text-decoration: none; color: #9bb1a9;}
 			<br>
 			<br>
             <header><br>
-				<a href="login.html">[회원가입]</a>&nbsp;
-				<a href="루바토 펜션 안내.html">[루바토 펜션 안내]</a>&nbsp;
-				<a href="행사안내화면.html">[행사 안내]</a>&nbsp;
-				<a href="호서야간개장.html">[호서 야간 개장]</a>&nbsp;
-				<a href="세일 안내장.html">[세일 안내장]</a>&nbsp;
-				<a href="월간 일정표.html">[월간 일정표]</a>&nbsp;
-				<a href="판매목록화면.html">[관심상품 판매목록]</a>
+
+				
        <br>
        <br>
 	   <br>
