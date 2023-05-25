@@ -142,7 +142,7 @@ a:link {text-decoration: none; color: black;}
     {document.getElementById("iimage").src = image;}
 	function func() {
 		let name = prompt("이름을 입력해봐~!");
-		document.getElementById('hi').innerHTML = name + " 안뇽 ㅎㅎ 반가웡~"}
+		document.getElementById('hi').innerHTML = name +  "&nbsp안뇽 ㅎㅎ 반가웡~"}
 	function openMenu() {
                 document.getElementById("main").style.marginLeft = "250px";
                 document.querySelector('.sidebar').style.width = "250px";
@@ -324,8 +324,8 @@ a:link {text-decoration: none; color: black;}
 		<hr class="hr1">
 
 		<p class="p1">To relieve boredom</p>
-		<div id='center'>인사&nbsp;&nbsp;:&nbsp;&nbsp;<button onclick="func();">^=^</button><h5 id="hi"></h5>
-		응원&nbsp;&nbsp;:&nbsp;&nbsp;<button onclick="alert('오늘도 고생 많았옹 <3')" type="button">*^^*</button></div>
+		<div id='center'>인사&nbsp;&nbsp;:&nbsp;&nbsp;<button onclick="func();">^=^</button><h4 id="hi"></h4></div><br>
+		<div id='center'>응원&nbsp;&nbsp;:&nbsp;&nbsp;<button onclick="alert('오늘도 고생 많았옹 <3')" type="button">*^^*</button></div>
 		
 		<br>
         <br>
@@ -333,7 +333,7 @@ a:link {text-decoration: none; color: black;}
 		<hr class="hr1">
 
 		<p class="p1">JavaScript</p>
-		<div>
+		<div id='center'>
 			<img onmouseover="this.style.width='500px'"onmouseout="this.style.width='301px'" src='cgun2.png' width="301px">
 			<img id="iimage" src="조건 1.png" width="300px" height="300px"
 			onmouseover="changeimage('조건 11.png')"onmouseout="changeimage('조건 1.png')">
